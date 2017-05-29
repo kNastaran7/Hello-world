@@ -12,8 +12,24 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
+<script>
+    window.pAsyncInit = function() {
+        PDK.init({
+            appId: "<your app-id>", // Change this
+            cookie: true
+        });
+    };
 
+    (function(d, s, id){
+        var js, pjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {return;}
+        js = d.createElement(s); js.id = id;
+        js.src = "//assets.pinterest.com/sdk/sdk.js";
+        pjs.parentNode.insertBefore(js, pjs);
+    }(document, 'script', 'pinterest-jssdk'));
+</script>
 <html>
+     
 
 <head>
     <title>Hello, world</title>
