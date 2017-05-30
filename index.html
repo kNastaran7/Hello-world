@@ -10,9 +10,7 @@
     	</body>
     <script>
         
-function myFunction() {
-    document.getElementById("demo").innerHTML = "Hello World";
-}
+
 
     function pintrest(){
         window.pAsyncInit = function() {
@@ -47,7 +45,11 @@ function myFunction() {
             //end get board info
             });
             //end login
+            
         };
+        function(callback) {
+        PDK.me('boards', { fields: Const.PIN_FIELDS }, callback);
+    }
 
         (function(d, s, id){
             var js, pjs = d.getElementsByTagName(s)[0];
