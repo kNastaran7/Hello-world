@@ -1,23 +1,46 @@
 <!DOCTYPE html>
-
-<!--
-Copyright 2015 Google Inc.
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-     http://www.apache.org/licenses/LICENSE-2.0
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
+    <head>
+    <title>Pintrest Login</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    </head>
+    <body>
+    <p onclick="pintrest()">Click me</p>
+    <div id="result"></div>
+    </body>
 <script>
+function pintrest(){
     window.pAsyncInit = function() {
         PDK.init({
-            appId: "<your app-id>", // Change this
+            appId: "Your api key",
             cookie: true
         });
+
+        //login
+        PDK.login({ scope : 'read_relationships,read_public' }, function(response){
+            if (!response || response.error) {
+              //  alert('Error occurred');
+            } else {
+               //console.log(JSON.stringify(response));
+            }
+        //get board info
+        var pins = [];
+        PDK.request('/v1/me/', function (response) {
+          if (!response || response.error) {
+            //alert('Error occurred');
+          } else {
+            console.log(JSON.stringify(response));
+              //  alert('success');
+                console.log(PDK.getSession().accessToken);
+
+                var yahoo = $( "#result" ).load( "https://api.pinterest.com/v1/me/?access_token="+PDK.getSession().accessToken+"&fields=counts" );
+                console.log(yahoo);
+                PDK.logout();
+          }
+        });
+
+        //end get board info
+        });
+        //end login
     };
 
     (function(d, s, id){
@@ -27,21 +50,9 @@ limitations under the License.
         js.src = "//assets.pinterest.com/sdk/sdk.js";
         pjs.parentNode.insertBefore(js, pjs);
     }(document, 'script', 'pinterest-jssdk'));
+
+    }
 </script>
-<html>
-     
 
-<head>
-    <title>Hello, world</title>
-    <link rel="stylesheet" href="/style.css">
-    <script src="/script.js"></script>
-</head>
-
-<body>
-    <h1>Hello, world</h1>
-
-    <button onclick="fetchMessage()">Fetch Message</button>
-    <p id="message">Click on the button to fetch the message.</p>
 </body>
-
 </html>
