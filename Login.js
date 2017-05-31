@@ -1,4 +1,4 @@
-Function Pinterest_login() {
+Function Pinterest_Login() {
         
 window.pAsyncInit = function() {
         PDK.init({
