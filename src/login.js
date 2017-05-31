@@ -1,6 +1,6 @@
     window.pAsyncInit = function() {
         PDK.init({
-            appId: "<your app-id>", // Change this
+            appId: "4903274313909551487", // Change this
             cookie: true
         });
     };
