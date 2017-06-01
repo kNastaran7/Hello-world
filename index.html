@@ -1,8 +1,9 @@
 <!DOCTYPE html>
+
 <html>
     	<head>
     	<title>Pintrest Login</title>
-    	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+            <script src="https://assets.pinterest.com/sdk/sdk.js"></script>
     	</head>
     	<body>
          <p id="demo"></p>
@@ -11,59 +12,12 @@
     	<script>
         
     function pintrest(){
-                PDK.init({
-                appId: "4903274313909551487",
-                cookie: true
-            });
-            //login
-            PDK.login({scope : 'read_public, write_public'}, function(session) {
-  if (!session) {
-    alert('The user chose not to grant permissions or closed the pop-up');
-  } else {
-    console.log('Thanks for authenticating. Getting your information...');
-    PDK.me(function(response) {
-      if (!response || response.error) {
-        alert('Oops, there was a problem getting your information');
-      } else {
-        console.log('Welcome,  ' + response.data.first_name + '!');
-      }
-    });
-  }
-});
-         
-                
-            //get board info
-            var pins = [];
-            PDK.request('/v1/me/', function (response) {
-              if (!response || response.error) {
-                //alert('Error occurred');
-              } else {
-              	console.log(JSON.stringify(response));
-                  //  alert('success');
-                    console.log(PDK.getSession().accessToken);
-                    var yahoo = $( "#result" ).load( "https://api.pinterest.com/v1/me/?access_token="+PDK.getSession().accessToken+"&fields=counts" );
-                    console.log(yahoo);
-                    PDK.logout();
-              }
-            });
-            //end get board info
-            });
-            //end login
-            
-        };
-        function(callback) {
-        PDK.me('boards', { fields: Const.PIN_FIELDS }, callback);
+              var pinterest = PDK.init(4903274313909551487);
+              pinterest.api('me').then(console.log);
     }
-   
-        (function(d, s, id){
-            var js, pjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {return;}
-            js = d.createElement(s); js.id = id;
-            js.src = "//assets.pinterest.com/sdk/sdk.js";
-            pjs.parentNode.insertBefore(js, pjs);
-        }(document, 'script', 'pinterest-jssdk'));
-        }
-    </script>
-
+            </script>
+         
     </body>
-    </html>
+            <html>
+           
+           
