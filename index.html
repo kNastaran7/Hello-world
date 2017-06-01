@@ -6,6 +6,7 @@
     </head>
     <body>
     <p onclick="pintrest()">Click me</p>
+        <p id="demo"></p>
     <div id="result"></div>
 <script>
     
@@ -41,10 +42,12 @@ function pintrest()
                 if (!response || response.error) {
                     alert('Error occurred');
                        } else {
-                        var boards = response.data;
+                        var boards = JSON.stringify(response.data);
                         }
-                       console.log(JSON.stringify(response));
-                      });
+                    
+                    document.getElementById("demo").innerHTML = boards;
+
+                     });
 
                 PDK.logout();
           }
