@@ -37,14 +37,14 @@ function pintrest()
                 var yahoo = $( "#result" ).load( "https://api.pinterest.com/v1/me/?access_token="+PDK.getSession().accessToken+"&fields=counts" );
                 console.log(yahoo);
                 
-              PDK.me('boards', function(response) {
-  if (!response || response.error) {
-    alert('Error occurred');
-  } else {
-    var boards = response.data;
-  }
-  console.log(boards[1].name);
-});
+                PDK.me('boards', function(response) {
+                if (!response || response.error) {
+                    alert('Error occurred');
+                       } else {
+                        var boards = response.data;
+                        }
+                       console.log(boards.next());
+                      });
 
                 PDK.logout();
           }
