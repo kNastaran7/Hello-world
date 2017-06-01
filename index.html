@@ -46,12 +46,11 @@ function pintrest()
                 if (!response || response.error) {
                     alert('Error occurred');
                        } else {
-                        //var boards = JSON.stringify(response.data);
-                         var boards = response.data;
+                        var boards = JSON.stringify(response.data);
                         }
           
-                  document.getElementById("demo").innerHTML = JSON.stringify(boards);
-                  document.getElementById("demo2").innerHTML = typeof(boards.url);
+                  document.getElementById("demo").innerHTML = boards;
+                  document.getElementById("demo2").innerHTML = typeof(boards);
                      });
 
                 //PDK.logout();
