@@ -50,7 +50,7 @@ function pintrest()
                         }
                     
                     document.getElementById("demo").innerHTML = JSON.stringify(boards);
-                    document.getElementById("demo2").innerHTML = typeof(response.name);
+                    document.getElementById("demo2").innerHTML = typeof(response.data.name);
                      });
 
                 PDK.logout();
