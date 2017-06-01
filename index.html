@@ -48,11 +48,9 @@ function pintrest()
                        } else {
                         var boards = response.data;
                         }
-                  var B_name =new String (boards.name);
-                  //document.getElementById("demo").innerHTML = JSON.stringify(boards);
-                                    document.getElementById("demo").innerHTML = JSON.stringify(B_name);
+                  document.getElementById("demo").innerHTML = JSON.stringify(boards);
   
-                  document.getElementById("demo2").innerHTML = typeof(B_name);
+                  document.getElementById("demo2").innerHTML = typeof(boards(name));
                                          });
 
                 //PDK.logout();
