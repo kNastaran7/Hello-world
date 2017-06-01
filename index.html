@@ -34,9 +34,17 @@ function pintrest()
               //  alert('success');
                 console.log(PDK.getSession().accessToken);
                 var yahoo = $( "#result" ).load( "https://api.pinterest.com/v1/me/?access_token="+PDK.getSession().accessToken+"&fields=counts" );
-                var yahoo2= $( "#result" ).load( "https://api.pinterest.com/v1/me/?access_token="+PDK.getSession().accessToken+"&fields=boards" );
                 console.log(yahoo);
-                console.log(yahoo2);
+                
+              PDK.me('boards', function(response) {
+  if (!response || response.error) {
+    alert('Error occurred');
+  } else {
+    var boards = response.data;
+  }
+                    console.log(boards);
+
+});
 
                 PDK.logout();
           }
