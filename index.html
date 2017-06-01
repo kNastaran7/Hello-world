@@ -7,13 +7,14 @@
     	</head>
     	<body>
          <p id="demo"></p>
-    	<button onclick="pintrest()">Click me</button>
-    	<div id="result"></div>
+    	<p id="demo" onclick="pinterest()">Click me to change my HTML content (innerHTML).</p>
+
     	<script>
         
     function pintrest(){
               var pinterest = PDK.init(4903274313909551487);
-              pinterest.api('me').then(console.log);
+              document.getElementById("demo").innerHTML = "Paragraph changed!";
+
     }
             </script>
          
