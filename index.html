@@ -8,7 +8,9 @@
     <p onclick="pintrest()">Click me</p>
     <div id="result"></div>
 <script>
-function pintrest(){
+    
+function pintrest()
+    {
     window.pAsyncInit = function() {
         PDK.init({
             appId: "4903274313909551487",
@@ -33,7 +35,7 @@ function pintrest(){
                 console.log(PDK.getSession().accessToken);
 
                 var yahoo = $( "#result" ).load( "https://api.pinterest.com/v1/me/?access_token="+PDK.getSession().accessToken+"&fields=counts" );
-                console.log(yahoo);
+              //  console.log(yahoo);
                 PDK.logout();
           }
         });
