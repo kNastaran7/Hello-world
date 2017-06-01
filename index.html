@@ -1,24 +1,17 @@
 <!DOCTYPE html>
-
 <html>
-    	<head>
-    	<title>Pintrest Login</title>
-            <script src="https://assets.pinterest.com/sdk/sdk.js"></script>
-    	</head>
-    	<body>
-         <p id="demo"></p>
-    	<button id="demo" onclick="pinterest()">Click me to change my HTML content (innerHTML).</button>
+<body>
 
-    	<script>
-        
-    function pintrest(){
-              var pinterest = PDK.init(4903274313909551487);
-              document.getElementById("demo").innerHTML = "Paragraph changed!";
+<p id="demo" onclick="myFunction()">Click me to change my HTML content (innerHTML).</p>
 
-    }
-            </script>
-         
-    </body>
-            <html>
+<script>
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Paragraph changed!";
+}
+</script>
+
+</body>
+</html> 
+
            
            
