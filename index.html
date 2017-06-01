@@ -50,7 +50,9 @@ function pintrest()
                         }
           
                   document.getElementById("demo").innerHTML = boards;
-                  document.getElementById("demo2").innerHTML = typeof(boards);
+                  //document.getElementById("demo2").innerHTML = typeof(boards);
+                    var pos = str.indexOf("name");
+                   document.getElementById("demo2").innerHTML = pos;
                      });
 
                 //PDK.logout();
