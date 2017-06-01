@@ -45,12 +45,12 @@ function pintrest()
                     alert('Error occurred');
                        } else {
                         //var boards = JSON.stringify(response.data);
-                         var boards = response.data.url;
+                         var boards = response.data;
 
                         }
                     
                     document.getElementById("demo").innerHTML = JSON.stringify(boards);
-                    document.getElementById("demo2").innerHTML = printObject(boards);
+                    document.getElementById("demo2").innerHTML = typeof(response.name);
                      });
 
                 PDK.logout();
