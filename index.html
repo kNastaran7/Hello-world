@@ -42,10 +42,10 @@ function pintrest()
                 if (!response || response.error) {
                     alert('Error occurred');
                        } else {
-                        var boards = JSON.stringify(response.data);
+                        var boards = JSON.stringify(response.data.name);
                         }
                     
-                    document.getElementById("demo").innerHTML = boards.name;
+                    document.getElementById("demo").innerHTML = boards;
 
                      });
 
