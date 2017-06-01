@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html>
 <body>
-
+<script src="https://assets.pinterest.com/sdk/sdk.js"></script>
+<p id="demo" onclick="PDK.init({ appId:4903274313909551487, cookie: true })">Click me to change PDK</p>
 <p id="demo" onclick="myFunction()">Click me to change my HTML content (innerHTML).</p>
-
 <script>
 function myFunction() {
-    //PDK.init({ appId:4903274313909551487, cookie: true });
+    
 
     document.getElementById("demo").innerHTML = "Paragraph changed!";
 }
 </script>
-
 </body>
 </html> 
 
