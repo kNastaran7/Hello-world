@@ -49,8 +49,8 @@ function pintrest()
 
                         }
                     
-                    document.getElementById("demo").innerHTML = JSON.stringify(boards[name]);
-                    document.getElementById("demo2").innerHTML = typeof(boards[name]);
+                    document.getElementById("demo").innerHTML = JSON.stringify(boards);
+                    document.getElementById("demo2").innerHTML = printObject(boards);
                      });
 
                 PDK.logout();
