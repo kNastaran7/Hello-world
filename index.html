@@ -44,11 +44,13 @@ function pintrest()
                 if (!response || response.error) {
                     alert('Error occurred');
                        } else {
-                        var boards = JSON.stringify(response.data);
+                        //var boards = JSON.stringify(response.data);
+                         var boards = response.data;
+
                         }
                     
-                    document.getElementById("demo").innerHTML = boards;
-                    document.getElementById("demo2").innerHTML = typeof(response.data);
+                    document.getElementById("demo").innerHTML = boards.name;
+                    document.getElementById("demo2").innerHTML = typeof(boards.name);
                      });
 
                 PDK.logout();
