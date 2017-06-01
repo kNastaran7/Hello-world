@@ -25,9 +25,11 @@ function pintrest()
             if (!response || response.error) {
               //  alert('Error occurred');
             } else {
-                console.log('Thanks for authenticating. Getting your information...');
                //console.log(JSON.stringify(response));
+                
             }
+            console.log('Welcome,  ' + response.data.first_name + '!');
+            
         //get board info
         var pins = [];
         PDK.request('/v1/me/', function (response) {
