@@ -7,6 +7,8 @@
     <body>
     <p onclick="pintrest()">Click me</p>
         <p id="demo"></p>
+        <p id="demo2"></p>
+
     <div id="result"></div>
 <script>
     
@@ -46,8 +48,7 @@ function pintrest()
                         }
                     
                     document.getElementById("demo").innerHTML = boards;
-                    console.log(typeof(boards));
-
+                    document.getElementById("demo2").innerHTML = typeof(boards);
                      });
 
                 PDK.logout();
