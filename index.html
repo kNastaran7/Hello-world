@@ -22,6 +22,7 @@ function pintrest()
             if (!response || response.error) {
               //  alert('Error occurred');
             } else {
+                console.log('Thanks for authenticating. Getting your information...');
                //console.log(JSON.stringify(response));
             }
         //get board info
@@ -42,7 +43,7 @@ function pintrest()
   } else {
     var boards = response.data;
   }
-  console.log(boards[1]);
+  console.log(boards[1].name);
 });
 
                 PDK.logout();
